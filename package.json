@@ -16,7 +16,8 @@
     "type": "git",
     "url": "git@github.com:eea/volto-eea-relations.git"
   },
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "@cypress/code-coverage": "^3.9.5",
     "babel-plugin-transform-class-properties": "^6.24.1"
   },
@@ -33,6 +34,4 @@
     "cypress:run": "../../../node_modules/cypress/bin/cypress run",
     "cypress:open": "../../../node_modules/cypress/bin/cypress open"
   }
-}
-}
 }
