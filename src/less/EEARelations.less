@@ -7,3 +7,96 @@
 .relatedItems-header {
   font-weight: bold;
 }
+
+.relatedItems.tab.active {
+  display: flex;
+}
+
+.relatedItems .photoAlbumEntry {
+  position: relative;
+  z-index: 3;
+  display: inline-block;
+  overflow: hidden;
+  width: 217px;
+  height: 330px;
+  padding: 0;
+  margin: 3px 7px 7px 7px;
+  box-shadow: 0 1px 2px #cccccc;
+}
+
+.relatedItems .photoAlbumEntryWrapper {
+  height: 225px;
+  order: 1;
+  background-color: #fff;
+}
+
+.relatedItems .photoAlbumEntryWrapperImg {
+  position: relative;
+  z-index: 0;
+  display: block;
+  height: 100%;
+  background: no-repeat center;
+  background-size: contain;
+}
+
+.relatedItems .photoAlbumEntryLink {
+  display: flex;
+  flex-direction: column;
+  color: transparent;
+}
+
+.relatedItems .photoAlbumEntryTitleWrapper {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  height: 110px;
+  background-color: #274357;
+}
+
+.relatedItems .photoAlbumEntryTitle {
+  display: -webkit-box;
+  height: 90px;
+  order: 0;
+  padding: 1rem 1.5rem;
+  margin-top: 0;
+  -webkit-box-orient: vertical;
+  color: #fff;
+  font-size: 14px;
+  font-weight: normal;
+  -webkit-line-clamp: 4;
+  line-height: 1.3;
+  text-align: left;
+  word-break: break-word;
+}
+
+.ribbon-wrapper {
+  position: absolute;
+  top: -6px;
+  right: -23px;
+  overflow: hidden;
+  width: 85px;
+  height: 88px;
+}
+
+.relatedItems .expired .ribbon {
+  font-size: 10px;
+}
+
+.expired .ribbon {
+  background-color: #efdc1e;
+  color: #002c56;
+}
+
+.ribbon {
+  position: relative;
+  top: 15px;
+  left: -20px;
+  width: 120px;
+  padding: 7px 0;
+  font: bold 8px Sans-Serif;
+  text-align: center;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+}

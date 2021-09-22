@@ -79,7 +79,9 @@ const EEARelations = (props) => {
                     </div>
                     <div className="photoAlbumEntryTitleWrapper">
                       {show_ribbon && (
-                        <div className={'ribbon-wrapper'}>{ribbon_message}</div>
+                        <div className={'ribbon-wrapper expired'}>
+                          <div className="ribbon">{ribbon_message}</div>
+                        </div>
                       )}
                       <span className="photoAlbumEntryTitle">{obj.title}</span>
                     </div>
