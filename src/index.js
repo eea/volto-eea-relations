@@ -9,6 +9,10 @@ const applyConfig = (config) => {
 
   const appExtras = config.settings.appExtras || [];
 
+  config.settings.eeaRelations = {
+    parentNodeSelector: '#page-document',
+  };
+
   config.settings.appExtras = [
     ...appExtras,
     {
