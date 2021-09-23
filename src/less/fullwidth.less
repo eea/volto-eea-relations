@@ -1,0 +1,31 @@
+.fullwidth-bg {
+    position: relative;
+    margin-top: 3.75rem !important;
+    margin-bottom: 3.75rem !important;
+    z-index: 1;
+    font-size: 1.25rem;
+    padding: 2rem 0;
+    line-height: 1.6;
+    clear: both;
+}
+
+.fullwidth-bg:before {
+    position: absolute;
+    content: " ";
+    top: 0;
+    z-index: -1;
+    height: 100%;
+    background-color: inherit;
+    width: 99.6vw;
+    right: 0;
+    left: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+@media (min-width: 830px) {
+    .fullwidth-bg {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}

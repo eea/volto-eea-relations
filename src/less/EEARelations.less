@@ -1,8 +1,22 @@
 @import 'globals.less';
+@import 'utilitities';
+@import 'fullwidth';
 
 @addon: 'volto-addons';
 @addontype: 'theme';
 @addonelement: 'eea-relations';
+
+.eea-tabs-panel {
+  display: none;
+}
+
+.eea-tabs-panel.active {
+  display: block;
+}
+
+.relatedItems {
+  margin: 2rem 0;
+}
 
 .relatedItems-header {
   font-weight: bold;
@@ -17,7 +31,8 @@
   z-index: 3;
   display: inline-block;
   overflow: hidden;
-  width: 217px;
+  width: 100%;
+  max-width: 217px;
   height: 330px;
   padding: 0;
   margin: 3px 7px 7px 7px;

@@ -55,7 +55,7 @@ const EEARelations = (props) => {
       return {
         menuItem: label,
         pane: (
-          <Tab.Pane className={'eea-tabs-panel'}>
+          <Tab.Pane className={'eea-tabs-panel'} key={label} as={'div'}>
             {objs.map((obj) => {
               const review_state = obj['review_state'];
               const is_expired = obj['is_expired'];
@@ -63,7 +63,11 @@ const EEARelations = (props) => {
                 is_expired || review_state !== 'published' ? true : false;
               const ribbon_message = is_expired ? 'Archived' : 'Draft';
               return (
-                <div className="photoAlbumEntry" data-title={obj.title}>
+                <div
+                  className="photoAlbumEntry"
+                  data-title={obj.title}
+                  key={obj.title}
+                >
                   <a
                     href={obj['@id']}
                     title={obj.title}
@@ -96,24 +100,31 @@ const EEARelations = (props) => {
     [eeaRelationsItems],
   );
 
-  return eeaRelationsItems ? (
+  return eeaRelationsItems && node ? (
     <Portal node={node}>
-      <div id="relatedItems" className={'relatedItems ui segment'}>
-        <h3 className={'notoc relatedItems-header'}>Related content</h3>
+      <div className="related-wrapper fullwidth-bg eea-block bg-secondary">
+        <div id="relatedItems" className={'relatedItems'}>
+          <h3 className={'notoc relatedItems-header'}>Related content</h3>
 
-        <Tab
-          menu={{
-            fluid: true,
-            vertical: true,
-            secondary: true,
-            pointing: true,
-            className: 'eea-tabs',
-          }}
-          renderActiveOnly={false}
-          grid={{ paneWidth: 10, tabWidth: 2 }}
-          panes={relation_labels.map(createTab)}
-          className={'eea-tabs-panels'}
-        />
+          <Tab
+            menu={{
+              fluid: true,
+              vertical: true,
+              secondary: true,
+              pointing: true,
+              className: 'eea-tabs',
+            }}
+            renderActiveOnly={false}
+            grid={{
+              paneWidth: 10,
+              tabWidth: 2,
+              stackable: true,
+              relaxed: true,
+            }}
+            panes={relation_labels.map(createTab)}
+            className={'eea-tabs-panels'}
+          />
+        </div>
       </div>
     </Portal>
   ) : null;
