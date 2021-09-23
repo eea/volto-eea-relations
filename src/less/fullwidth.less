@@ -1,31 +1,31 @@
 .fullwidth-bg {
-    position: relative;
-    margin-top: 3.75rem !important;
-    margin-bottom: 3.75rem !important;
-    z-index: 1;
-    font-size: 1.25rem;
-    padding: 2rem 0;
-    line-height: 1.6;
-    clear: both;
+  position: relative;
+  z-index: 1;
+  padding: 2rem 0;
+  margin-top: 3.75rem !important;
+  margin-bottom: 3.75rem !important;
+  clear: both;
+  font-size: 1.25rem;
+  line-height: 1.6;
 }
 
 .fullwidth-bg:before {
-    position: absolute;
-    content: " ";
-    top: 0;
-    z-index: -1;
-    height: 100%;
-    background-color: inherit;
-    width: 99.6vw;
-    right: 0;
-    left: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  left: 50%;
+  width: 99.6vw;
+  height: 100%;
+  margin-right: -50vw;
+  margin-left: -50vw;
+  background-color: inherit;
+  content: ' ';
 }
 
 @media (min-width: 830px) {
-    .fullwidth-bg {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-    }
+  .fullwidth-bg {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
 }
