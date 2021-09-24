@@ -16,7 +16,10 @@
     "type": "git",
     "url": "git@github.com:eea/volto-eea-relations.git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "react-sizeme": "3.0.2",
+    "react-component-queries": "2.3.0"
+  },
   "devDependencies": {
     "@cypress/code-coverage": "^3.9.5",
     "babel-plugin-transform-class-properties": "^6.24.1"

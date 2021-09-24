@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getEEARelations } from './actions';
 import { getBaseUrl } from '@plone/volto/helpers';
+import componentQueries from 'react-component-queries';
 
 import './less/EEARelations.less';
 
@@ -105,7 +106,6 @@ const EEARelations = (props) => {
       <div className="related-wrapper fullwidth-bg eea-block bg-secondary">
         <div id="relatedItems" className={'relatedItems'}>
           <h3 className={'notoc relatedItems-header'}>Related content</h3>
-
           <Tab
             menu={{
               fluid: true,
@@ -113,6 +113,7 @@ const EEARelations = (props) => {
               secondary: true,
               pointing: true,
               className: 'eea-tabs',
+              ...(props.menu || {}),
             }}
             renderActiveOnly={false}
             grid={{
@@ -120,6 +121,7 @@ const EEARelations = (props) => {
               tabWidth: 2,
               stackable: true,
               relaxed: true,
+              ...(props.grid || {}),
             }}
             panes={relation_labels.map(createTab)}
             className={'eea-tabs-panels'}
@@ -133,5 +135,20 @@ const EEARelations = (props) => {
 EEARelations.propTypes = {
   content: PropTypes.object,
 };
-
-export default EEARelations;
+export default componentQueries(({ width }) => {
+  if (width <= 568) {
+    return {
+      menu: { vertical: true },
+      grid: { tabWidth: 12, paneWidth: 12 },
+    };
+  } else if (width <= 1024) {
+    return {
+      menu: { vertical: false },
+    };
+  } else {
+    return {
+      menu: { vertical: true },
+      grid: { tabWidth: 2, paneWidth: 10 },
+    };
+  }
+})(EEARelations);
