@@ -6,6 +6,8 @@
 @addontype: 'theme';
 @addonelement: 'eea-relations';
 
+@corporateGrey: #d3d3d3;
+
 .eea-tabs-panel {
   display: none;
 }
@@ -19,7 +21,33 @@
 }
 
 .relatedItems-header {
+  display: block;
   font-weight: bold;
+}
+
+.eea-tabs {
+  position: relative;
+}
+
+@media (max-width: 767px) {
+  .eea-tabs > .item {
+    border-top: 1px solid @corporateGrey !important;
+    border-bottom: 1px solid @corporateGrey !important;
+  }
+}
+@media (min-width: 1108px) {
+  .eea-tabs > .item {
+    border-top: 1px solid @corporateGrey !important;
+    border-bottom: 1px solid @corporateGrey !important;
+  }
+
+  .relatedItems-header {
+    margin-bottom: -2.5rem;
+  }
+
+  .eea-tabs {
+    top: 2.25rem;
+  }
 }
 
 .relatedItems.tab.active {
