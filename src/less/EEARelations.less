@@ -34,8 +34,25 @@
     border-top: 1px solid @corporateGrey !important;
     border-bottom: 1px solid @corporateGrey !important;
   }
+
+  #relatedItems .column {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  #relatedItems .eea-tabs {
+    border-right: 0;
+  }
 }
 @media (min-width: 1108px) {
+  #relatedItems .eea-tabs {
+    border-right: 0;
+  }
+
+  #relatedItems .active.item {
+    border-right-width: 5px;
+  }
+
   .eea-tabs > .item {
     border-top: 1px solid @corporateGrey !important;
     border-bottom: 1px solid @corporateGrey !important;
