@@ -74,7 +74,7 @@ const EEARelations = (props) => {
         setOptions({});
       }
     }
-  }, [pageWidth]);
+  }, [pageWidth, options]);
 
   const eeaRelationsConfig = config.settings.eeaRelations;
   const portal_node =
@@ -145,7 +145,7 @@ const EEARelations = (props) => {
         ),
       };
     },
-    [eeaRelationsItems],
+    [eeaRelationsItems, intl],
   );
 
   return browserCondition && fetchCondition && eeaRelationsItems ? (
