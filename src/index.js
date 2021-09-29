@@ -11,6 +11,7 @@ const applyConfig = (config) => {
 
   config.settings.eeaRelations = {
     parentNodeSelector: '#page-document',
+    envParentNodeSelector: 'RAZZLE_EEA_RELATIONS_PARENT_SELECTOR',
   };
 
   config.settings.appExtras = [
