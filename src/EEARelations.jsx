@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getEEARelations } from './actions';
 import { getBaseUrl } from '@plone/volto/helpers';
 import { isEqual } from 'lodash';
-import { runtimeConfig } from '@plone/volto/runtime_config';
 
 import './less/EEARelations.less';
 
@@ -77,9 +76,7 @@ const EEARelations = (props) => {
   }, [pageWidth, options]);
 
   const eeaRelationsConfig = config.settings.eeaRelations;
-  const portal_node =
-    runtimeConfig[eeaRelationsConfig.envParentNodeSelector] ||
-    eeaRelationsConfig.parentNodeSelector;
+  const portal_node = eeaRelationsConfig.renderToNode;
 
   const relation_labels = Object.keys(eeaRelationsItems || {});
 

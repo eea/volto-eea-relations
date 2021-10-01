@@ -1,5 +1,6 @@
 import { eeaRelations } from './reducers';
 import EEARelations from './EEARelations';
+import { runtimeConfig } from '@plone/volto/runtime_config';
 
 const applyConfig = (config) => {
   config.addonReducers = {
@@ -11,8 +12,13 @@ const applyConfig = (config) => {
 
   config.settings.eeaRelations = {
     parentNodeSelector: '#page-document',
-    envParentNodeSelector: 'RAZZLE_EEA_RELATIONS_PARENT_SELECTOR',
+    envParentNodeSelector:
+      runtimeConfig['RAZZLE_EEA_RELATIONS_PARENT_SELECTOR'],
+    ...(config.settings.eeaRelations || {}),
   };
+  config.settings.eeaRelations.renderToNode =
+    config.settings.eeaRelations.envParentNodeSelector ||
+    config.settings.eeaRelations.parentNodeSelector;
 
   config.settings.appExtras = [
     ...appExtras,
