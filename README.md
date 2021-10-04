@@ -37,6 +37,10 @@ E.g.
 > RAZZLE_EEA_RELATIONS_PARENT_SELECTOR=#view yarn start
 
 
+> `settings.eeaRelations.maxAlbumsPerPanel`: `4`
+ 
+A `Pagination` component will show up in the `Tab Panel` in case there are more albums than the number defined in this setting.
+
 
 ## Getting started
 

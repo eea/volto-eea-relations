@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getEEARelations } from './actions';
 import { getBaseUrl } from '@plone/volto/helpers';
@@ -9,7 +9,7 @@ import './less/EEARelations.less';
 
 import { Portal } from 'react-portal';
 import config from '@plone/volto/registry';
-import { Tab } from 'semantic-ui-react';
+import { Tab, Pagination } from 'semantic-ui-react';
 import { defineMessages, injectIntl } from 'react-intl';
 const messages = defineMessages({
   draft: {
@@ -52,6 +52,8 @@ const EEARelations = (props) => {
 
   const [options, setOptions] = React.useState({});
 
+  const currentPageRef = useRef({});
+
   React.useEffect(() => {
     if (pageWidth <= 568) {
       const mobileOptions = {
@@ -80,6 +82,23 @@ const EEARelations = (props) => {
 
   const relation_labels = Object.keys(eeaRelationsItems || {});
 
+  const handleQueryPaginationChange = (e, { activePage }) => {
+    const values = currentPageRef.current;
+    const target = e.target;
+    const panel = target.closest('.eea-tabs-panel');
+    const albums = panel.querySelectorAll('.photoAlbumEntry');
+    const panelSize = values.maxPanelSize;
+    const startIndex = (activePage - 1) * panelSize - 1;
+    const endIndex = activePage * panelSize - 1;
+    albums.forEach((album, index) => {
+      if (index > startIndex && index <= endIndex) {
+        album.classList.remove('hidden');
+      } else {
+        album.classList.add('hidden');
+      }
+    });
+  };
+
   useEffect(() => {
     if (fetchCondition && contentContainsPathname && browserCondition) {
       dispatch(getEEARelations(basePathname));
@@ -95,11 +114,20 @@ const EEARelations = (props) => {
   const createTab = React.useCallback(
     (label, index) => {
       const objs = eeaRelationsItems[label];
+      const totalObjs = objs.length;
+      const maxPanelSize = eeaRelationsConfig.maxAlbumsPerPanel;
+      const hasManyObjs = totalObjs > maxPanelSize;
+      const totalPages = Math.ceil(totalObjs / maxPanelSize);
+      currentPageRef.current = {
+        totalPages: totalPages,
+        totalObjs: totalObjs,
+        maxPanelSize: maxPanelSize,
+      };
       return {
         menuItem: label,
         pane: (
           <Tab.Pane className={'eea-tabs-panel'} key={label} as={'div'}>
-            {objs.map((obj) => {
+            {objs.map((obj, index) => {
               const review_state = obj['review_state'];
               const is_expired = obj['is_expired'];
               const show_ribbon =
@@ -109,7 +137,11 @@ const EEARelations = (props) => {
                 : intl.formatMessage(messages.draft);
               return (
                 <div
-                  className="photoAlbumEntry"
+                  className={
+                    index >= maxPanelSize
+                      ? 'photoAlbumEntry hidden'
+                      : 'photoAlbumEntry'
+                  }
                   data-title={obj.title}
                   key={obj.title}
                 >
@@ -138,6 +170,18 @@ const EEARelations = (props) => {
                 </div>
               );
             })}
+            {hasManyObjs ? (
+              <Pagination
+                defaultActivePage={1}
+                firstItem={null}
+                lastItem={null}
+                boundaryRange={0}
+                totalPages={totalPages}
+                onPageChange={handleQueryPaginationChange}
+              />
+            ) : (
+              ''
+            )}
           </Tab.Pane>
         ),
       };
