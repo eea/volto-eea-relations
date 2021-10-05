@@ -186,7 +186,7 @@ const EEARelations = (props) => {
         ),
       };
     },
-    [eeaRelationsItems, eeaRelationsConfig?.maxAlbumsPerPanel, intl],
+    [eeaRelationsItems, eeaRelationsConfig.maxAlbumsPerPanel, intl],
   );
 
   return browserCondition && fetchCondition && eeaRelationsItems ? (
