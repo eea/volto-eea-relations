@@ -11,6 +11,7 @@ const applyConfig = (config) => {
   const appExtras = config.settings.appExtras || [];
 
   config.settings.eeaRelations = {
+    maxAlbumsPerPanel: 4,
     parentNodeSelector: '#page-document',
     envParentNodeSelector:
       runtimeConfig['RAZZLE_EEA_RELATIONS_PARENT_SELECTOR'],
