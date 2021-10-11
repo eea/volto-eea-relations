@@ -6,16 +6,18 @@
 [Volto](https://github.com/plone/volto) add-on
 
 ### Example of render output
+
 ![relations-block (1)](https://user-images.githubusercontent.com/152852/135653465-f38f4448-31ef-485a-8dbd-be866a98f622.png)
 
 ## Features
+
 Used together with [eea.relations](https://github.com/eea/eea.relations) package, this addon displays the `forward`, `backward` and
 `auto-relations` of the current context in a series of album cards placed within the panels of a tab component.
 
 > :warning: **Not all relations will show up**
-> 
+>
 > Only if the related objects are added as `Content type` and `Possible relations`
-> from `site/portal_relations`, otherwise any other relations will be ignored from 
+> from `site/portal_relations`, otherwise any other relations will be ignored from
 > this component's render output.
 
 ### Configuration
@@ -23,11 +25,11 @@ Used together with [eea.relations](https://github.com/eea/eea.relations) package
 It is configurable through the following `config` modifiers for `settings.eeaRelations`:
 
 > `settings.eeaRelations.parentNodeSelector`: `#page-document`
-> 
+>
 This css selector is used to control where the component render output should be appended.
-> 
+>
 > `settings.eeaRelations.envParentNodeSelector`: `RAZZLE_EEA_RELATIONS_PARENT_SELECTOR`
-> 
+>
 This variable can be passed by `Rancher` or by starting `Volto` with this environment variable in order to set the parent node selector where the component render should be appended to.
 
 This will have higher precedence over the previous setting of the parent node since you
@@ -38,7 +40,7 @@ E.g.
 
 
 > `settings.eeaRelations.maxAlbumsPerPanel`: `4`
- 
+
 A `Pagination` component will show up in the `Tab Panel` in case there are more albums than the number defined in this setting.
 
 
