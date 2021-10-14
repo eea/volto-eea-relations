@@ -92,9 +92,9 @@ const EEARelations = (props) => {
     const endIndex = activePage * panelSize - 1;
     albums.forEach((album, index) => {
       if (index > startIndex && index <= endIndex) {
-        album.classList.remove('hidden');
+        album.classList.remove('is-hidden');
       } else {
-        album.classList.add('hidden');
+        album.classList.add('is-hidden');
       }
     });
   };
@@ -139,7 +139,7 @@ const EEARelations = (props) => {
                 <div
                   className={
                     index >= maxPanelSize
-                      ? 'photoAlbumEntry hidden'
+                      ? 'photoAlbumEntry is-hidden'
                       : 'photoAlbumEntry'
                   }
                   data-title={obj.title}
