@@ -1,7 +1,18 @@
 # volto-eea-relations
 [![Releases](https://img.shields.io/github/v/release/eea/volto-eea-relations)](https://github.com/eea/volto-eea-relations/releases)
+
 [![Pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto-addons%2Fvolto-eea-relations%2Fmaster&subject=master)](https://ci.eionet.europa.eu/view/Github/job/volto-addons/job/volto-eea-relations/job/master/display/redirect)
+[![Lines of Code](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-eea-relations-master&metric=ncloc)](https://sonarqube.eea.europa.eu/dashboard?id=volto-eea-relations-master)
+[![Coverage](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-eea-relations-master&metric=coverage)](https://sonarqube.eea.europa.eu/dashboard?id=volto-eea-relations-master)
+[![Bugs](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-eea-relations-master&metric=bugs)](https://sonarqube.eea.europa.eu/dashboard?id=volto-eea-relations-master)
+[![Duplicated Lines (%)](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-eea-relations-master&metric=duplicated_lines_density)](https://sonarqube.eea.europa.eu/dashboard?id=volto-eea-relations-master)
+
 [![Pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto-addons%2Fvolto-eea-relations%2Fdevelop&subject=develop)](https://ci.eionet.europa.eu/view/Github/job/volto-addons/job/volto-eea-relations/job/develop/display/redirect)
+[![Lines of Code](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-eea-relations-develop&metric=ncloc)](https://sonarqube.eea.europa.eu/dashboard?id=volto-eea-relations-develop)
+[![Coverage](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-eea-relations-develop&metric=coverage)](https://sonarqube.eea.europa.eu/dashboard?id=volto-eea-relations-develop)
+[![Bugs](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-eea-relations-develop&metric=bugs)](https://sonarqube.eea.europa.eu/dashboard?id=volto-eea-relations-develop)
+[![Duplicated Lines (%)](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-eea-relations-develop&metric=duplicated_lines_density)](https://sonarqube.eea.europa.eu/dashboard?id=volto-eea-relations-develop)
+
 
 [Volto](https://github.com/plone/volto) add-on
 
