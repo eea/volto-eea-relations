@@ -14,8 +14,11 @@
 [![Bugs](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-eea-relations-develop&metric=bugs)](https://sonarqube.eea.europa.eu/dashboard?id=volto-eea-relations-develop)
 [![Duplicated Lines (%)](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-eea-relations-develop&metric=duplicated_lines_density)](https://sonarqube.eea.europa.eu/dashboard?id=volto-eea-relations-develop)
 
-
 [Volto](https://github.com/plone/volto) add-on
+
+## Important: this add-on is obsolete
+
+This add-on is no longer in use and obsolete. It aas used by the old IMS systems based on Plone 4.
 
 ### Example of render output
 
