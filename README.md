@@ -16,7 +16,7 @@
 
 [Volto](https://github.com/plone/volto) add-on
 
-## Important: this add-on is obsolete
+### Important: this add-on is obsolete
 
 This add-on is no longer in use and obsolete. It aas used by the old IMS systems based on Plone 4.
 
